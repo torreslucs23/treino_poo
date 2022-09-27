@@ -3,12 +3,12 @@
 using namespace std;
 
 
-Veiculo_anfibio :: Veiculo_anfibio(string motor, double preco, 
-                        int rodas, double vel_maxima,
-                        int capacidade, double comprimento,
+Veiculo_anfibio :: Veiculo_anfibio(string motor, double preco, int codigo_anfibio,
+                        int rodas, double vel_maxima, int codigo_terrestre,
+                        int capacidade, double comprimento, int codigo_aquatico, 
                         string cor, string marca, int ano): Veiculo(cor, marca, ano),
-                        Veiculo_terrestre(rodas, vel_maxima, cor, marca, ano),
-                         Veiculo_aquatico(capacidade, comprimento, cor, marca, ano){
+                        Veiculo_terrestre(rodas, vel_maxima, codigo_terrestre, cor, marca, ano),
+                         Veiculo_aquatico(capacidade, codigo_aquatico, comprimento, cor, marca, ano){
                             this -> motor = motor;
                             this -> preco = preco;
                          }
@@ -27,4 +27,12 @@ double Veiculo_anfibio :: getPreco(){
 
 void Veiculo_anfibio :: setPreco(double preco){
     this -> preco = preco;
+}
+
+int Veiculo_anfibio :: getCodigo_anfibio(){
+    return this -> codigo_anfibio;
+}
+
+void Veiculo_anfibio :: setCodigo_anfibio(int codigo){
+    this -> codigo_anfibio = codigo;
 }
